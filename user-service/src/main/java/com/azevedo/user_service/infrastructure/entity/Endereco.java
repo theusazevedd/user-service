@@ -27,4 +27,8 @@ public class Endereco {
     @Column(length = 9)
     private String cep;
 
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
+
 }

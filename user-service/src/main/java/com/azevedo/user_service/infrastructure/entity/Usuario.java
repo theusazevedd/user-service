@@ -25,14 +25,10 @@ public class Usuario implements UserDetails {
     private String email;
     private String senha;
 
-    @Setter(AccessLevel.NONE)
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "usuario_id", referencedColumnName = "id")
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
     private List<Endereco> enderecos;
 
-    @Setter(AccessLevel.NONE)
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "usuario_id", referencedColumnName = "id")
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
     private List<Telefone> telefones;
 
 
