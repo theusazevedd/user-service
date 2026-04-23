@@ -1,5 +1,7 @@
 package com.azevedo.user_service.controller;
 
+import com.azevedo.user_service.business.dto.EnderecoDTO;
+import com.azevedo.user_service.business.dto.TelefoneDTO;
 import com.azevedo.user_service.business.dto.UsuarioDTO;
 import com.azevedo.user_service.business.service.UsuarioService;
 import com.azevedo.user_service.infrastructure.entity.Usuario;
@@ -36,7 +38,7 @@ public class UsuarioController {
     }
 
     @GetMapping
-    public ResponseEntity<Usuario> buscaUsuarioPorEmail(@RequestParam("email") String email) {
+    public ResponseEntity<UsuarioDTO> buscaUsuarioPorEmail(@RequestParam("email") String email) {
         return ResponseEntity.ok(usuarioService.buscaUsuarioPorEmail(email));
 
     }
@@ -53,6 +55,18 @@ public class UsuarioController {
         return ResponseEntity.ok(usuarioService.atualizaDadosUsuario(token, dto));
     }
 
+    @PutMapping("/endereco/{id}")
+    public ResponseEntity<EnderecoDTO> atualizaEndereco(@RequestBody EnderecoDTO dto,
+                                                        @PathVariable Long id) {
 
+        return ResponseEntity.ok(usuarioService.atualizaEndereco(id, dto));
+    }
+
+    @PutMapping("/telefone/{id}")
+    public ResponseEntity<TelefoneDTO> atualizaTelefone(@RequestBody TelefoneDTO dto,
+                                                        @PathVariable Long id) {
+
+        return ResponseEntity.ok(usuarioService.atualizaTelefone(id, dto));
+    }
 
 }
