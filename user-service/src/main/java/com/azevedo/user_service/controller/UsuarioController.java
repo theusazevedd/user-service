@@ -4,7 +4,6 @@ import com.azevedo.user_service.business.dto.EnderecoDTO;
 import com.azevedo.user_service.business.dto.TelefoneDTO;
 import com.azevedo.user_service.business.dto.UsuarioDTO;
 import com.azevedo.user_service.business.service.UsuarioService;
-import com.azevedo.user_service.infrastructure.entity.Usuario;
 import com.azevedo.user_service.infrastructure.security.JwtUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
