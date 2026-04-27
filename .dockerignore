@@ -1,0 +1,12 @@
+.git
+.github
+.idea
+
+.env
+.env.*
+!.env.example
+
+user-service/.gradle
+user-service/build
+user-service/out
+user-service/.idea
